@@ -12,3 +12,9 @@ target/
 # OS
 .DS_Store
 Thumbs.db
+
+helm.exe
+helm-v3*
+windows-amd64/
+.idea/
+target/
