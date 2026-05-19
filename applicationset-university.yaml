@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: university-microservices
+  namespace: argocd
+
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/diane-del/university-microservices-it.git
+        revision: main
+        directories:
+          - path: deploy/*
+
+  template:
+    metadata:
+      name: "{{path.basename}}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/diane-del/university-microservices-it.git
+        targetRevision: main
+        path: "{{path}}"
+        directory:
+          recurse: true
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

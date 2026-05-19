@@ -1,17 +1,53 @@
-# university-microservices-it
-Complete University Management Microservices Architecture built with Spring Boot, OpenFeign, Spring Cloud Gateway, PostgreSQL, Docker and Kubernetes.
+# University Microservices - Kubernetes & Helm
 
-i've worked with:
-![Java](https://img.shields.io/badge/Java-17-blue)
-![Spring Boot microservices](https://img.shields.io/badge/Spring_Boot-3.2-brightgreen)
-![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestrated-326CE5)
-![Architecture](https://img.shields.io/badge/Architecture-Microservices-orange)
-#OpenFeign
-#Spring Cloud Gateway
-#PostgreSQL
-#ArgoCD
-#Git branching strategy
-#GitOps deployment model
+This project contains the Kubernetes and Helm deployment configuration for a University Microservices architecture.
 
-<img width="1259" height="836" alt="image" src="https://github.com/user-attachments/assets/94e80dd3-2965-4064-9e62-2addb4548cb5" />
+## Architecture
+
+The system is composed of:
+
+- API Gateway
+- Student Service
+- Course Service
+- Enrollment Service
+- Grade Service
+- PostgreSQL databases per service
+
+All services are containerized with Docker and deployed on Kubernetes using Helm charts.
+
+---
+
+## Technologies Used
+
+- Java Spring Boot
+- Docker
+- Kubernetes
+- Helm
+- ArgoCD
+- PostgreSQL
+
+---
+
+## Project Structure
+helm/
+└── University/
+├── Chart.yaml
+├── values.yaml
+├── templates/
+└── charts/
+
+
+---
+
+## Deployment
+
+Install with Helm: helm install university ./helm/University
+
+
+Or deploy using ArgoCD via Helm source.
+
+---
+
+## Author
+
+Diane Dongmo Feulefack
